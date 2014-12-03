@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def nine_square(request):
-    if request.GET['a'] and request.GET['b'] and request.GET['c']:
+    if request.GET['a'].isdigit() and request.GET['b'].isdigit() and request.GET['c'].isdigit():
         discr = int(request.GET['b'])**2 - 4 * int(request.GET['a']) * int(request.GET['c'])
         if discr > 0:
             import math
@@ -17,7 +17,7 @@ def nine_square(request):
             r = render(request, 'square.html', {'x': x, 'testid': request.GET})
         else:
             error = "No root"
-            r = render(request, 'square.html', {'error': error, 'error': error})
+            r = render(request, 'square.html', {'err': error, 'testid': request.GET})
         return r
     else:
         r = render(request, 'square.html', {'testid': request.GET})
