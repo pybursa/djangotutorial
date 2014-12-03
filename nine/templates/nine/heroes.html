@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Дискриминант</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            {% for i in header %}
+            <th>{{ i }}</th>
+            {% endfor %}
+        </tr>
+        {% for heroes in data %}
+        <tr>
+            <td>{{ heroes.0 }}</td>
+            <td>{{ heroes.1 }}</td>
+            <td>{{ heroes.2 }}</td>
+            <td>{{ heroes.3 }}</td>
+            <td>{{ heroes.4 }}</td>
+            <td>
+                {% if heroes.5 %}
+                <a href="{% url 'nine:detail' heroes.5|lower %}">{{ heroes.5 }}</a>
+                {% endif %}
+            </td>
+            <td>{{ heroes.6 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
