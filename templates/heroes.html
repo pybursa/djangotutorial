@@ -1,0 +1,33 @@
+<html>
+<head>
+<style>
+td, tr {
+    border: 2px solid black;
+}
+</style>
+</head>
+<body>
+<table>
+    <tr>
+        {% for cell in head %}
+        <th>{{ cell }}</th>
+        {% endfor %} 
+    </tr>
+
+    {% for cell in heroes %}
+    <tr>
+        {% for item in cell %}<td>
+            {%ifequal forloop.counter 5 %}
+            {% if item != '' %}
+            <a href="{% url 'nine:details' item|lower %}">{{item}}</a>
+            {% endif %}
+        {% else %}
+        {{item}}
+        </td>
+        {%endifequal %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+    </body>
+    </html>

@@ -1,0 +1,18 @@
+{% load render_table from django_tables2 %}
+<!doctype html>
+<html>
+
+<head>
+<style type="text/css">
+td.id, th.id {
+    display:none;
+}
+td, tr {
+border:2px solid black
+}
+</style>
+</head>
+</body>
+{% render_table people %}
+</body>
+</html>
