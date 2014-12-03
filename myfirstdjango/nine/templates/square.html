@@ -11,6 +11,16 @@
 <p><strong>A = </strong>{{ testid.a }}</p>
 <p><strong>D = </strong>{{ testid.b }}</p>
 <p><strong>C = </strong>{{ testid.c }}</p>
+    {% if x1 and x2 %}
+    <p><strong>X1 = </strong>{{ x1 }}</p>
+    <p><strong>X2 = </strong>{{ x2 }}</p>
+    {% endif %}
+    {% if x %}
+    <p><strong>X = </strong>{{ x }}</p>
+    {% endif %}
+    {% if error %}
+    <p><strong>{{ error }}</strong></p>
+    {% endif %}
 {% else %}
 <h4>Переданы не все параметры</h4>
 <p>URL должен соответствовать /nine/square?a=10&b=20&c=30</p>
