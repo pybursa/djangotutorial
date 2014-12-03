@@ -1,0 +1,42 @@
+<html><head></head>
+<body><br />
+<table>
+<tr>
+<td>
+<b>name</b>
+</td>
+<td>
+<b>birthday</b>
+</td>
+<td>
+<b>nickname</b>
+</td>
+<td>
+</td>
+</tr>
+{% for persona in model.persons %}
+<tr>
+<td>
+{{ persona.name }} {{ persona.surname }}
+</td>
+<td>
+{{ persona.birth_date }}
+</td>
+<td>
+{{ persona.nickname }}
+</td>
+<td>
+{% if persona.nickname != '' %}
+
+    <a href="/nine/heroes/{{ persona.nickname }}"> Details</a>
+
+{% else %}
+
+    <a href="/nine/heroes/None"> Details</a>
+
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+</body></html>
