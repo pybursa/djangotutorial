@@ -5,7 +5,7 @@ from django.views.generic import RedirectView
 
 urlpatterns = patterns(
     '',
-    url(r'$', RedirectView.as_view(url='quadratic-equation')),
-    url(r'/square/$', 'nine.views.quad_equation', name='quadratic-equation'),
+    url(r'^$', RedirectView.as_view(pattern_name='nine:quadratic-equation')),
+    url(r'square/$', 'nine.views.quad_equation', name='quadratic-equation'),
 
 )
