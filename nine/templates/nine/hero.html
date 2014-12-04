@@ -1,0 +1,32 @@
+<p>
+    <b>The Last Action Heros:</b>
+</p>
+
+{% if heroes %}
+    <p>
+        The Justice League!
+    </p>
+    {% for hero in heroes %}
+        <li>{{ hero.first_name }} {{ hero.surname }} -
+            {% if hero.nickname %}
+                <a href="{% url 'nine:personal-room' nick=hero.nickname|lower %}">
+                    {{ hero.nickname }}
+                </a>
+            {% else %}
+                incognito
+            {% endif %}
+             [{{ hero.get_age }}]</li>
+    {% endfor %}
+{% else %}
+    <p>
+        Personal room of {{ superhero.nickname }}
+    </p>
+    <li>{{ superhero.surname }}</li>
+    <li>{{ superhero.first_name }}</li>
+    <li>{{ superhero.get_fullname }}</li>
+    <li>{{ superhero.get_age }}</li>
+
+    <a href="{% url 'nine:justice-league' %}">
+        to heroes list
+    </a>
+{% endif %}
