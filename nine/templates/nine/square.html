@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Дискриминант</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+    .messages {
+        border: 1px solid #ccc;
+        padding: 10px 25px;
+    }
+    .error {
+        color: #cd0a0a;
+    }
+    </style>
+</head>
+<body>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% for root in roots %}
+{{ root }} <br />
+{% endfor %}
+</body>
+</html>
