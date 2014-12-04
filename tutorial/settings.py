@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'nine',
+    'django_tables2',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,7 +64,11 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'), )
+TEMPLATE_CONTEXT_PROCESSORS = {
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
