@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h3>Приложение "NINE"</h3>
+<p>Функция SQUARE</p>
+{% if testid.a and testid.b and testid.c %}
+<p><strong>A = </strong>{{ testid.a }}</p>
+<p><strong>D = </strong>{{ testid.b }}</p>
+<p><strong>C = </strong>{{ testid.c }}</p>
+    {% if x1 and x2 %}
+    <p><strong>X1 = </strong>{{ x1 }}</p>
+    <p><strong>X2 = </strong>{{ x2 }}</p>
+    {% endif %}
+    {% if x %}
+    <p><strong>X = </strong>{{ x }}</p>
+    {% endif %}
+    {% if err %}
+    <p><strong>{{ err }}</strong></p>
+    {% endif %}
+{% else %}
+<h4>Переданы не все параметры</h4>
+<p>URL должен соответствовать /nine/square?a=10&b=20&c=30</p>
+{% endif %}
+</body>
+</html>
