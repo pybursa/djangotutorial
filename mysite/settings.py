@@ -39,6 +39,7 @@ DJANGO_APPS = (
 
 CUSTOM_APPS = (
     'polls',
+    'nine',
 )
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS
